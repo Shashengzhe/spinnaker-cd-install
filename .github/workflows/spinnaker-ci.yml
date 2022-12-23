@@ -28,7 +28,7 @@ jobs:
 #     - name: 01-安装Halyard部署工具
 #       run: |
 #         chmod +x ./InstallHalyard.sh
-#         ls 
+#         ls
 #         sleep 2
 #         sudo bash -x InstallHalyard.sh --user runner -y
 #         sleep 5
