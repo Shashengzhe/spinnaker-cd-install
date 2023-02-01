@@ -6,13 +6,16 @@ name: test
 on:
   push:
     paths:
-      - '.github/workflows/**'
+      - '.github/workflows/test.yml'
 
 jobs:
   build:
     runs-on: ubuntu-18.04
+    env:
+      PASS: ${{ secrets.ALI_DOCKER_PASSWD }}
+      PASS2: ${{ secrets.DOCKER_PASSWD }}
     steps:
     - name: test
       run: |
-        echo ${{ secrets.ALI_DOCKER_PASSWD }} | base64
-        echo ${{ secrets.DOCKER_PASSWD }} | base64
+        echo $PASS
+        echo $PASS2
